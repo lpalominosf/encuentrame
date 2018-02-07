@@ -10,7 +10,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-2 col-sm-2">
-        <button class="btn btn-info" id="encuentrame">Encuéntrame :)</button>
+        <button class="btn btn-info text-center" id="encuentrame">Encuéntrame :)</button>
       </div>
       <div class="col-md-3 col-sm-3">
       <!-- Input Origen -->
@@ -35,10 +35,11 @@
   <div class="row">
     <div class="col-md-12 col-sm-12 center" id="map"></div>
   </div>
-
-
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZoiVIbHwySKbEGdG2Zy1NX7bHtUd41oI&callback=initMap"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZoiVIbHwySKbEGdG2Zy1NX7bHtUd41oI&libraries=places&callback=initMap" async defer></script>
   <script src="app.js"></script>
 </body>
 </html>
