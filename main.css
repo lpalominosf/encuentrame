@@ -9,6 +9,12 @@
   border: 2px solid black;
 }
 
+
+.btn-info {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
 .controls {
   margin-top: 10px;
   border: 1px solid transparent;
@@ -34,18 +40,18 @@
 
 #origin-input:focus,
 #destination-input:focus {
-  border-color: #4d90fe;
+  border-color: #5bc0de;
 }
 
 #mode-selector {
   color: #fff;
-  background-color: #4d90fe;
+  background-color: #5bc0de;
   margin-left: 12px;
-  padding: 5px 11px 0px 11px;
+  padding: 4px 11px 0px 65px;
 }
 
 #mode-selector label {
   font-family: Roboto;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 300;
 }
