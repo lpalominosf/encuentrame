@@ -1,3 +1,7 @@
+/*
+* Funcion initMap, realiza "el dibujo" del mapa en el div que contiene el id map
+* Busca las coordenadas por defecto y las muestra al inicializar la página
+*/
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     mapTypeControl: false,
@@ -5,16 +9,26 @@ function initMap() {
     zoom: 7
   });
 
+    /*
+    * La función buscar, busca la posición actual, utilizando navigator, geolocation y getCurrentPosition
+    * A getCurrentPosition se le pasan las funciones de éxito y error, que se mostrarán al intentar
+    * Realizar la búsqueda con el botón "encuentrame"
+    */
     function buscar(){
     if(navigator.geolocation){
-      navigator.geolocation.getCurrentPosition(funcionExito, funcionError);//getCurrentPosition permite al usuario obtener su ubicación actual, funcionExito se ejecuta solo cuando el usuario comparte su ubicación, mientras que funcionError se ejecuta cuando se produce un error en la geolocalización
+      navigator.geolocation.getCurrentPosition(funcionExito, funcionError);
     }
   }
-
+  /*
+  * Evento para el botón "encuentrame", busca la posición actual utilizando la latitud y longitud
+  */
   document.getElementById("encuentrame").addEventListener("click", buscar);
   var latitud, longitud;
 
-  var funcionExito = function(position){//var funcionExito, con el que obtendremos nuestra latitud o longitud y además crearemos un marcador de nuestra ubicación.
+  /*
+  * Con funcionExito obtendremos nuestra latitud o longitud y además crearemos un marcador de nuestra ubicación.
+  */
+  var funcionExito = function(position){
     latitud = position.coords.latitude;
     longitud = position.coords.longitude;
 
@@ -23,18 +37,26 @@ function initMap() {
       animation: google.maps.Animation.DROP,
       map: map
     });
-
+    // El zoom muestra el tamaño del mapa
     map.setZoom(17);
     map.setCenter({lat:latitud, lng:longitud});
   }
-
-  var funcionError = function(error){//funcionError con un mensaje para el usuario, en caso de que nuestra geolocalización falle.
+  /*
+  * En caso de que tengamos problemas de conexión, o simplemente no se encuentre nuestra ubicación, 
+  * Se ejecuta nuestra función de error
+  */
+  var funcionError = function(error){
     alert("tenemos un problema con encontrar tu ubicación");
   }
-
+  /*
+  * Constructor que permite crear el autocompletado en los input dentro del mapa
+  */
   new AutocompleteDirectionsHandler(map);
   }
-
+  /*
+  * La función de AutocompleteDirectionsHandler sirve en caso de ir caminando, en transporte público o
+  * Si vas conduciendo, para ellos toma los datos introducidos en el input de origen y destino
+  */
   function AutocompleteDirectionsHandler(map) {
     this.map = map;
     this.originPlaceId = null;
@@ -64,8 +86,9 @@ function initMap() {
     this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
   }
 
-  // Sets a listener on a radio button to change the filter type on Places
-  // Autocomplete.
+  /*
+  * Este evento permite que los elementos radio tracen la ruta al momento de hacerles click
+  */
   AutocompleteDirectionsHandler.prototype.setupClickListener = function(id, mode) {
     var radioButton = document.getElementById(id);
     var me = this;
@@ -93,7 +116,9 @@ function initMap() {
         });
 
       };
-
+      /*
+      * Esta función es la que traza la ruta, tomando el origen y destino. 
+      */
   AutocompleteDirectionsHandler.prototype.route = function() {
     if (!this.originPlaceId || !this.destinationPlaceId) {
       return;
@@ -111,6 +136,4 @@ function initMap() {
       window.alert('Directions request failed due to ' + status);
     }
   });
-
-
 };
