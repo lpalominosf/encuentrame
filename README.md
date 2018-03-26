@@ -24,3 +24,5 @@ Puedes buscar tu ubicación en tiempo real o bien trazar la ruta a pie, en auto 
 
 ![GitHub followers](https://img.shields.io/github/followers/espadrine.svg?style=social&label=Follow)
 
+## Desarrollado para [Laboratoria](http://laboratoria.la)
+
