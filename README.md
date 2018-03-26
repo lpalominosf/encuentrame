@@ -15,6 +15,9 @@ Puedes buscar tu ubicación en tiempo real o bien trazar la ruta a pie, en auto 
   - jQuery `~v.3.3.1`
   - Bootstrap `~v.3.3.7`
 
+* Dependencias de Desarrollo
+  - Geolocation from Google
+
 
 ![GitHub followers](https://img.shields.io/github/followers/espadrine.svg?style=social&label=Follow)
 
