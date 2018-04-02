@@ -1,3 +1,5 @@
+![trazarruta](https://user-images.githubusercontent.com/32282235/38211947-7b8f4eb2-3692-11e8-9fab-058db415aec3.png)
+
 ![Sourcegraph for Repo Reference Count](https://img.shields.io/badge/Release%20Date-March-brightgreen.svg?style=flat-square)
 
 # Encuéntrame
@@ -9,7 +11,6 @@ Puedes buscar tu ubicación en tiempo real o bien trazar la ruta a pie, en auto 
 ***
 
 ![img](assets/img/encuentrame.png)
-![img](assets/img/trazarruta.png)
 
 * Dependencias de Producción
   - jQuery `~v.3.3.1`
